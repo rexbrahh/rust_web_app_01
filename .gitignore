@@ -1,0 +1,12 @@
+# Rust
+# Ignore build artifacts and binaries
+/target/
+
+# Ignore editor and OS-specific files
+**/*.rs.bk
+.DS_Store
+.idea/
+.vscode/
+
+# Ignore log files
+*.log 
