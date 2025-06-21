@@ -5,3 +5,5 @@ edition = "2021"
 authors = ["Rex Liu <rex@not-rex.org>"]
 
 [dependencies]
+chrono = "0.4"
+nickel = { git = "https://github.com/nickel-org/nickel.rs.git" }
