@@ -1,20 +1,8 @@
-#[macro_use] extern crate nickel;
+use std::fs::File;
+use std::io::prelude::*;
 
-use nickel::Nickel;
-
-fn say_hello() -> &'static str {
-    "Hello dear world!"
-}
-
-#[tokio::main]
-async fn main() {
-    let mut server = Nickel::new();
-
-    server.utilize(router! {
-        get "**" => |_req, _res| {
-            say_hello()
-        }
-    });
-
-    let _ = server.listen("127.0.0.1:6767").await;
+fn main() -> std::io::Result<()> {
+    let mut file = File::create("foo.txt")?;
+    file.write_all(b"Hello, world!")?;
+    Ok(())
 }
